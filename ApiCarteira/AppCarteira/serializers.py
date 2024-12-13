@@ -4,7 +4,7 @@ from .models import Usuario, Semestre
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        fields = ['id', 'foto', 'cpf', 'matricula', 'data_nascimento', 'semestre']
+        fields = ['id', 'foto', 'nome','cpf', 'matricula', 'data_nascimento', 'semestre']
 
 class SemestreSerializer(serializers.ModelSerializer):
     usuario = serializers.PrimaryKeyRelatedField(queryset=Usuario.objects.all())

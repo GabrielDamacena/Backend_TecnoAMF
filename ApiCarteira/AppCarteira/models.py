@@ -2,6 +2,7 @@ from django.db import models
 
 class Usuario(models.Model):
     foto = models.ImageField(upload_to='fotos_usuarios/', blank=True, null=True)
+    nome = models.CharField(max_length=50, unique=True,blank=True, null=True)
     cpf = models.CharField(max_length=11, unique=True)
     matricula = models.CharField(max_length=20, unique=True)
     data_nascimento = models.DateField()
